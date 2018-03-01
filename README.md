@@ -6,9 +6,10 @@ A fully customizable terminal-like-website
 
 You can preview a live demo [here](https://luisbraganca.github.io/fake-terminal-website/) with a raw FTW template or [my personal website](http://lbraganca.pt) that also uses this template.
 
-![Screenshot of the application running on a mobile device](https://raw.githubusercontent.com/luisbraganca/fake-terminal-website/master/screenshots/mobile.png)
-
 ![Screenshot of the application running on a desktop device](https://raw.githubusercontent.com/luisbraganca/fake-terminal-website/master/screenshots/desktop.png)
+
+
+![Screenshot of the application running on a mobile device](https://raw.githubusercontent.com/luisbraganca/fake-terminal-website/master/screenshots/mobile.png)
 
 ### Screenshots
 
