@@ -14,8 +14,6 @@ You can preview a live demo [here](https://luisbraganca.github.io/fake-terminal-
 
 ![Screenshot of the application running on a mobile device](https://raw.githubusercontent.com/luisbraganca/fake-terminal-website/master/screenshots/mobile.png)
 
-### Screenshots
-
 ## Technical details
 
 This *tool* allows you to build your own website that looks like a terminal/console. To make this possible, it was implemented in a dynamic way. All you have to do is to configure a few things here and there and you have your own version.
