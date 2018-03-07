@@ -136,9 +136,9 @@ body {
    }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 900px) {
     #githubImg img {
-        transform: translateX(720px);
+        transform: translateX(900px);
     }
 
     #container {

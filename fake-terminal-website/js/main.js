@@ -82,13 +82,7 @@ var main = (function () {
      * AUX FUNCTIONS
      */
 
-    var isUsingIE = (function () {
-        return function () {
-            var ua = window.navigator.userAgent;
-            var msie = ua.indexOf("MSIE ");
-            return (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./));
-        }
-    })();
+    var isUsingIE = window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
 
     var ignoreEvent = (function () {
         return function (event) {
@@ -404,7 +398,7 @@ var main = (function () {
         this.output.textContent = "";
         this.prompt.textContent = "";
         if (this.typeSimulator) {
-            this.type(configs.getInstance().welcome + (isUsingIE() ? "\n" + configs.getInstance().internet_explorer_warning : ""), function () {
+            this.type(configs.getInstance().welcome + (isUsingIE ? "\n" + configs.getInstance().internet_explorer_warning : ""), function () {
                 this.unlock();
             }.bind(this));
         }
