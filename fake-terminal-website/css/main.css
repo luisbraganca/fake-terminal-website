@@ -15,6 +15,7 @@ body {
 #container {
     padding: .1em 1.5em 1em 1em;
     margin-left: 50px;
+    margin-right: 135px;
 }
 #cmdline {
     outline: none;
@@ -138,5 +139,9 @@ body {
 @media screen and (max-width: 720px) {
     #githubImg img {
         transform: translateX(720px);
+    }
+
+    #container {
+        margin-right: 0;
     }
 }
