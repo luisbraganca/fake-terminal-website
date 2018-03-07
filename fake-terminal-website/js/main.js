@@ -178,7 +178,12 @@ var main = (function () {
         });
         this.prepareSideNav();
         this.lock(); // Need to lock here since the sidenav elements were just added
-        document.body.addEventListener("click", this.focus.bind(this));
+        document.body.addEventListener("click", function (event) {
+            if (this.sidenavOpen) {
+                this.handleSidenav(event);
+            }
+            this.focus();
+        }.bind(this));
         this.cmdLine.addEventListener("keydown", function (event) {
             if (event.which === 13 || event.keyCode === 13) {
                 this.handleCmd();
