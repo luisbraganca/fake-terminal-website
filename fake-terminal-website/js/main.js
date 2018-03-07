@@ -206,17 +206,11 @@ var main = (function () {
     Terminal.makeElementDisappear = function (element) {
         element.style.opacity = 0;
         element.style.transform = "translateX(-300px)";
-        // Support for old browsers
-        element.style.msTransform = "translateX(-300px)";
-        element.style.WebkitTransform = "translateX(-300px)";
     };
 
     Terminal.makeElementAppear = function (element) {
         element.style.opacity = 1;
         element.style.transform = "translateX(0)";
-        // Support for old browsers
-        element.style.msTransform = "translateX(0)";
-        element.style.WebkitTransform = "translateX(0)";
     };
 
     Terminal.prototype.prepareSideNav = function () {
