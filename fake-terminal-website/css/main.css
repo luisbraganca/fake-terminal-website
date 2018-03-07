@@ -134,3 +134,9 @@ body {
        font-size: 13px;
    }
 }
+
+@media screen and (max-width: 720px) {
+    #githubImg img {
+        transform: translateX(720px);
+    }
+}

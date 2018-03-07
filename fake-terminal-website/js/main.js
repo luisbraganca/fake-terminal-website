@@ -103,9 +103,6 @@ var main = (function () {
         }
     })();
 
-    var isPhone = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i);
-
-
     /**
      * MODEL
      */
@@ -180,7 +177,6 @@ var main = (function () {
     };
 
     Terminal.prototype.init = function () {
-        isPhone && (document.getElementById("githubImg").style.display = "none");
         this.sidenav.addEventListener("click", ignoreEvent);
         this.cmdLine.disabled = true;
         this.sidenavElements.forEach(function (elem) {
@@ -269,9 +265,7 @@ var main = (function () {
             elem.disabled = false;
         });
         scrollToBottom();
-        if (!isPhone) {
-            this.focus();
-        }
+        this.focus();
     };
 
     Terminal.prototype.handleFill = function () {
