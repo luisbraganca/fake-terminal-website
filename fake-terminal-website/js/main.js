@@ -341,6 +341,9 @@ var main = (function () {
             case cmds.SUDO.value:
                 this.sudo();
                 break;
+            case "":
+                this.unlock();
+                break;
             default:
                 this.invalidCommand(cmdComponents);
                 break;
