@@ -131,8 +131,7 @@ var main = (function () {
         RM: { value: "rm", help: configs.getInstance().rm_help },
         RMDIR: { value: "rmdir", help: configs.getInstance().rmdir_help },
         TOUCH: { value: "touch", help: configs.getInstance().touch_help },
-        SUDO: { value: "sudo", help: configs.getInstance().sudo_help },
-        EMPTY: { value: "", help: configs.getInstance().empty_help },
+        SUDO: { value: "sudo", help: configs.getInstance().sudo_help }
     };
 
     var Terminal = function (prompt, cmdLine, output, sidenav, profilePic, user, host, root, outputTimer) {
@@ -342,7 +341,7 @@ var main = (function () {
             case cmds.SUDO.value:
                 this.sudo();
                 break;
-            case cmds.EMPTY.value:
+            case "":
                 this.unlock();
                 break;
             default:
