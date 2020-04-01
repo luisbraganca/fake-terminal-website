@@ -30,7 +30,6 @@ This *tool* allows you to build your own website that looks like a terminal/cons
 
 ### Future (TODO) functionalities
 
-* History navigation using Up and Down arrows
 * Ask for a password when using `sudo` command
 * `email` or similar command that allows the visitor to send an email directly to the website owner
 

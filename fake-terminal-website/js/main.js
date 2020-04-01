@@ -87,6 +87,8 @@ var main = (function () {
      * Aux functions
      */
     var isUsingIE = window.navigator.userAgent.indexOf("MSIE ") > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./);
+    var cmdHistory=[];
+    var idxHistory = 0;
 
     var ignoreEvent = function (event) {
         event.preventDefault();
@@ -193,6 +195,12 @@ var main = (function () {
             } else if (event.which === 9 || event.keyCode === 9) {
                 this.handleFill();
                 ignoreEvent(event);
+            } else if (event.which === 38 || event.keyCode === 38) {
+                this.handleHistory(event);
+                ignoreEvent(event);
+            } else if (event.which === 40 || event.keyCode === 40) {
+                this.handleHistory(event);
+                ignoreEvent(event);
             }
         }.bind(this));
         this.reset();
@@ -268,7 +276,10 @@ var main = (function () {
     };
 
     Terminal.prototype.handleFill = function () {
-        var cmdComponents = this.cmdLine.value.trim().split(" ");
+        var cmdComponents = this.cmdLine.value.trim().split(" ");        
+        cmdHistory.push(this.cmdLine.value.trim());
+        idxHistory = cmdHistory.length;
+        
         if ((cmdComponents.length <= 1) || (cmdComponents.length === 2 && cmdComponents[0] === cmds.CAT.value)) {
             this.lock();
             var possibilities = [];
@@ -308,6 +319,8 @@ var main = (function () {
 
     Terminal.prototype.handleCmd = function () {
         var cmdComponents = this.cmdLine.value.trim().split(" ");
+        cmdHistory.push(this.cmdLine.value.trim());
+        idxHistory = cmdHistory.length;
         this.lock();
         switch (cmdComponents[0]) {
             case cmds.CAT.value:
@@ -346,7 +359,21 @@ var main = (function () {
                 break;
         };
     };
-
+    
+    Terminal.prototype.handleHistory = function (event) {
+      if (event.which === 38 || event.keyCode === 38) {
+         if ((cmdHistory.length > 0) && (cmdHistory.length >= idxHistory) && idxHistory > 0){
+           idxHistory--;
+           this.cmdLine.value = cmdHistory[idxHistory];
+         }
+      } else if (event.which === 40 || event.keyCode === 40) {
+        if ((cmdHistory.length > 0) && (cmdHistory.length > idxHistory + 1)){
+          idxHistory++;
+          this.cmdLine.value = cmdHistory[idxHistory];
+        }
+      }
+    };
+    
     Terminal.prototype.cat = function (cmdComponents) {
         var result;
         if (cmdComponents.length <= 1) {
