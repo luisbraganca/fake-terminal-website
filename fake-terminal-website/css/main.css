@@ -9,7 +9,8 @@ html, body {
 body {
     font-size: 13pt;
     font-family: monospace;
-    color: white;
+    /*color: white;*/
+    color: #ff9306;
     background-color: black;
 }
 #container {
@@ -24,8 +25,8 @@ body {
     font: inherit;
     border: none;
     color: inherit;
-    display: flex;
-    flex-grow: 1;
+    border: solid red 1px;
+    width: 100%;
 }
 #output {
     clear: both;
@@ -35,13 +36,19 @@ body {
     white-space: nowrap;
     user-select: none;
     display: flex;
+    border: solid white 1px;
 }
 .prompt-color {
     color: #e09f14;
 }
+#input-div {
+    width:100%;
+}
 .input-line {
     display: flex;
     clear: both;
+    border: solid blue 1px;
+
 }
 .input-line > div:nth-child(2) {
     display: flex;
@@ -71,23 +78,12 @@ body {
     top: 0;
     left: 0;
     background-color: #e09f14;
-    opacity: 0.8;
+    /* opacity: 0.8; */
+    opacity: 1.0;
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
-}
-#sidenav img {
-    display: block;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 100px;
-    transition: 0.3s;
-    opacity: 0;
-}
-
-#sidenav img:focus {
-    outline: none;
+    /* display:none; */
 }
 
 #sidenav button {
